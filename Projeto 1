@@ -1,1 +1,31 @@
-oi
+
+//Qual a quantidade de patos e coelhos em uma fazenda considerando o numero de cabeças e patas totais
+
+
+
+
+
+#include <stdio.h>
+int main()
+{
+//nc corresponde a número de cabeças e np número de patas
+    int nc, np;
+    int c, p;
+
+    printf("Qual o numero de cabecas em sua fazenda? ");
+    scanf("%d", &nc);
+
+    printf("E o numero de pernas? ");
+    scanf("%d", &np);
+
+    //resolução do sistema nc = c+p e np = 4c + 2p
+
+    p = (((4*nc) - (np))/2);
+
+    c = (((np) - (2*nc))/2);
+
+    printf(" O numero de patos e %d\n", p);
+
+    printf(" O numero de coelhos e %d\n", c);
+    return 0;
+}
