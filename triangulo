@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+//19/04/22 criado por Mateus Alonso numero usp 13695553
+
+
+
+
+
+
+int main()
+
+{
+//setlocale permite o uso de sinais graficos
+    setlocale(LC_ALL, "Portuguese");
+    int a, b, c;
+    printf("Quais são os lados de seu triângulo: ");
+
+    scanf("%d %d %d", &a, &b, &c);
+
+  // checa se todos os lados são iguais
+    if (a == b && b == c)
+        {
+
+        printf("O triângulo é equilátero");
+        }
+  // checa se dois dois dos lados são iguais 
+    else if (( a == b && b != c)||(a != b  && b == c)||(a == c && c != b ))
+        {
+        printf("O triângulo é isóceles");
+        }
+  // checa se os três lados são diferentes
+    else if ( a != b && b != c && a != c);
+        {
+        printf("O triângulo é escaleno");
+
+        }
+
+
+
+
+  return 0;
+  }
