@@ -1,0 +1,25 @@
+
+// o objetivo é inverter os algarismos do numero apresentado
+
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int a, b, c, d, e;
+    printf("Imprima um numero de 3 digitos: ");
+
+    scanf("%d", &a);
+// encontra o primeiro digito 
+    b = a/100;
+// encontra o segundo digito utilizando o fato de ints não terem casas após a vírgula
+    c = a/10 - (b*10);
+// mesmo processo com o ultimo digito
+    d = a - b*100 - c*10;
+// adiciona todos os algarismos em outra ordem
+    e = d*100 + c*10 + b;
+
+    printf("\nNumero invertido e: %d", e);
+
+  return 0;
+}
