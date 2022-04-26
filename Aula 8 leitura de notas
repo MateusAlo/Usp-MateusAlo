@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+
+    float n = 0;
+    float media_geral=0, porcentagem_nota_boa=0, s=0;
+    float a = 0, b = 0 ;
+
+
+//conte e escreva quantos alunos tiveram nota baixa (nota < 5.0)
+
+//conte e escreva quantos alunos tiveram nota alta ( nota >= 5.0)
+
+//calcule a média geral
+
+//calcule a porcentagem dos alunos que obtiveram nota maior ou igual a 5
+
+printf("Digite a primeira Nota ");
+        scanf("%f", &n);
+
+    while (n>=0)
+    {
+
+        if (n>=5)
+        {
+            a = a + 1;
+        }
+        else if (n<5)
+        {
+            b = b + 1;
+        }
+          s = s + n;
+        printf("Digite outra Nota ");
+        scanf("%f", &n);
+
+
+    }
+
+    media_geral = s/(a+b);
+   porcentagem_nota_boa = a*100/ (a + b);
+
+
+    int a2 = a, b2 = b;
+    printf("Quantidade de alunos com nota baixa %d", b2 );
+    printf("\nQuantidade de alunos com nota boa %d", a2);
+    printf("\nMedia Geral %f", media_geral);
+    printf("\nPorcentagem de alunos que obtiveram nota boa %f", porcentagem_nota_boa);
+
+
+
+    return 0;
+}
