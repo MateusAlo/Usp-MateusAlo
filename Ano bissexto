@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int main()
+{
+
+
+    int ano;
+    char ch;
+
+    printf("Que ano gostaria de avaliar: ");
+    scanf("%d", &ano);
+
+    while (ch!= 's')
+    {
+        {
+            if (ano% 400 == 0)
+                printf("\nO Ano eh bissexto (digite s para sair) ");
+
+            else if ((ano% 4 == 0) && (ano% 100 != 0))
+
+                printf("\nO Ano  eh bissexto (digite s para sair) ");
+            else if  (ano% 4 != 0)
+                printf("\nO Ano nao eh bissexto (digite s para sair) ");
+        }
+        ch = getch();
+    }
+
+    return 0;
+}
