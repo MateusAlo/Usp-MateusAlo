@@ -1,30 +1,53 @@
+// Código feito no dia 06/05/2022
+// Mateus Alonso nº 13695553
+
+
+
+
+
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
 #include <limits.h>
 #define TAM 7
-
+//definido o tamanho do vetor como 7
 
 int main ()
 {
-    int i, m;
+    int i, m=25, n=25; // m e n são o menor e segundo maior valor
     srand(time(NULL));
     int arint[TAM];
 
-    for (i=0; i < TAM; i++){
+    printf("Aperte qualquer letra: ");
 
-        arint[i] = rand()%25;
+    for (i=0; i < TAM; i++)
+    {
+
+        arint[i] = rand()%25; // cria 7 valores de 0 a 24
         scanf("%d", &arint[i]);
-        printf("\nvalor: %d", arint[i]);
+        printf("\nvalor: %d", arint[i]); // escaneia e escreve os valores para checagem
 
 
 
     }
 
     for (i=0; i < TAM; i++)
-        if (arint[i] < m)
-            m = arint[i];
+    {
+        if (arint[i] < m) // se o valor do vetor for menor do que m (inicialmente 25)
+            m = arint[i]; // m se torna o valor de arint[i], assim atingindo o menor valor possível
 
-    printf("\nO ultimo e penultimo valor digitados: %d, %d", m, m);
+    }
+    for (i=0; i < TAM; i++)
+    {
+        if ((arint[i] < n) && (arint[i] != m) ) // com o dado do menor valor podemos encontrar o segundo menor repetindo o
+            n = arint[i];                       //processo anterior porém sem contar com o menor valor
+
+    }
+
+
+
+
+    printf("\nO ultimo e penultimo valor digitados: %d, %d", m, n);
     return 0;
 }
+
