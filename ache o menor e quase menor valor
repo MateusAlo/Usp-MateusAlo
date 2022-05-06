@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include <limits.h>
+#define TAM 7
+
+
+int main ()
+{
+    int i, m;
+    srand(time(NULL));
+    int arint[TAM];
+
+    for (i=0; i < TAM; i++){
+
+        arint[i] = rand()%25;
+        scanf("%d", &arint[i]);
+        printf("\nvalor: %d", arint[i]);
+
+
+
+    }
+
+    for (i=0; i < TAM; i++)
+        if (arint[i] < m)
+            m = arint[i];
+
+    printf("\nO ultimo e penultimo valor digitados: %d, %d", m, m);
+    return 0;
+}
