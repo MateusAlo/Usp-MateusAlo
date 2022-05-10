@@ -1,0 +1,50 @@
+// Código feito no dia 10/05/2022
+// Mateus Alonso nº 13695553
+
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include <limits.h>
+#define TAM 4
+
+//Desenvolva um programa que leia os valores de uma matriz de 4 linhas e 4 colunas. Em seguida, calcule a soma de cada coluna e insira-as na última linha da matriz; agora a matriz é de 4X4.
+int main()
+
+{
+    int i, j;
+    srand(time(NULL));
+    int matriz [TAM][TAM];//tamanho da matriz definido no macro
+
+
+
+
+
+    printf("");
+    for (i=0; i < (TAM); i++)
+    {
+
+        for (j=0; j < TAM; j++)
+        {
+            if (i != 3)
+            {
+                matriz [i][j] = rand()%20 + 10; // gera valores para as 3 primeiras linhas da matriz
+                printf(" %d     ", matriz[i][j] );
+            }
+
+            else
+            {
+
+                matriz [i][j] = (matriz [i-1][j]+ matriz[i-2][j] + matriz[i-3][j]); // na ultima linha o valor na matriz é a soma das ultimas linhas na mesma coluna j
+                printf(" %d     ", matriz[i][j]);
+            }
+
+
+        }
+        printf("\n");
+    }
+
+
+
+
+    return 0;
+}
