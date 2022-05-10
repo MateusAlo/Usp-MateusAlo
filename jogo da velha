@@ -1,0 +1,48 @@
+// Código feito no dia 10/05/2022
+// Mateus Alonso nº 13695553
+
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include <limits.h>
+#define TAM 3
+
+
+int main()
+
+{
+    int i, j, n;
+    char jogo[i][j];
+
+    printf("O primeiro jogador eh X e o segundo O\n");
+
+
+    for (i=0; i < TAM; i++)
+    {
+        for (j=0; j < TAM; j++)
+        {
+            jogo[i][j]= '    ';
+            printf("%c", jogo[i][j]);
+
+        }
+        printf("\n");
+
+    }
+    for (n = 0; n < 9; n++)
+    {
+    printf("Escreva a posição da jogada (1-3): ");
+    scanf("%d, %d", &i, &j );
+        if (n%2 == 0)
+            {
+            jogo[i-1][j-1] = 'X';
+            }
+        else
+        {
+
+            jogo[i-1][j-1] = 'O';
+
+        }
+
+    }
+    return 0;
+}
