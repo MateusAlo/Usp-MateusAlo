@@ -11,12 +11,42 @@
 int main()
 
 {
-    int i, j, n, l, c;
+    int i, j, n, l, c, caracter=0;
     char jogo[TAM][TAM];
+    char jogador1, jogador2;
 
-    printf("O primeiro jogador eh X e o segundo O\n");
 
 
+   while (caracter == 0 )//caracter é um marcador para checar se a escolha entre X e O é valida,
+    {
+
+        printf("\nBem vindo(s) ao jogo da velha, jogador 1 escolha dentre 'X' ou 'O': ");
+        jogador1 = getch();
+        if (jogador1 == 'X')
+        {
+            jogador2 = 'O';
+            caracter = 1;
+            printf("\nEscolheu bem");
+            break;
+
+
+        }
+        if (jogador1 == 'O')
+        {
+            jogador2 == 'X';
+            caracter = 1;
+            printf("\nEscolheu bem");
+            break;
+
+        }
+        else
+        {
+            printf("\nEscolha de caracter invalida, escolha novamente");
+            caracter =  0;
+        }
+
+
+    }
     for (i=0; i < TAM; i++)
     {
         for (j=0; j < TAM; j++)
@@ -68,10 +98,14 @@ int main()
                 printf("\n");
 
             }
+
         }
 
+    }
 
 
 
-            return 0;
-        }
+
+
+    return 0;
+    }
