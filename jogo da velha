@@ -11,13 +11,13 @@
 int main()
 
 {
-    int i, j, n, l, c, caracter=0;
+    int i, j, n, l, c, caracter=0, valido;
     char jogo[TAM][TAM];
-    char jogador1, jogador2;
+    char jogador1, jogador2, winner;
 
 
 
-   while (caracter == 0 )//caracter é um marcador para checar se a escolha entre X e O é valida,
+    while (caracter == 0 )//caracter é um marcador para checar se a escolha entre X e O é valida,
     {
 
         printf("\nBem vindo(s) ao jogo da velha, jogador 1 escolha dentre 'X' ou 'O': ");
@@ -35,7 +35,7 @@ int main()
         {
             jogador2 == 'X';
             caracter = 1;
-            printf("\nEscolheu bem");
+            printf("\nEscolheu bem\n");
             break;
 
         }
@@ -47,6 +47,7 @@ int main()
 
 
     }
+    printf("\n");
     for (i=0; i < TAM; i++)
     {
         for (j=0; j < TAM; j++)
@@ -60,52 +61,55 @@ int main()
     }
     for (n = 0; n < 9; n++)
     {
-        if (n%2 == 0)
-        {
-            jogo[l-1][c-1] = 'X';
-            printf("%c ", jogo[i][j]);
-            for (i=0; i < TAM; i++)
-            {
-                for  (j=0; j < TAM; j++)
-                {
-                    printf("Escreva a posição da jogada (1-3): ");
-                    scanf("%d %d", &l, &c );
-
-                    {
-
-                    }
-                }
-                printf("\n");
-
-            }
+        printf("\nEscreva a posicao da jogada (1-3): ");
+        scanf("%d %d", &l, &c );
+        while (jogo[l-1][c-1] != '-'){
+            printf("\nEscreva outra posicao (nao ocupada)");
+            scanf("%d %d", &l, &c );
         }
-        else
-        {
+    {
 
-            jogo[i-1][j-1] = 'O';
-            printf("%c ", jogo[i][j]);
-            for (i=0; i < TAM; i++)
+        if ((n%2 == 0) && (jogo[l-1][c-1] == '-'))
             {
-                for  (j=0; j < TAM; j++)
+                for (i=0; i < TAM; i++)
                 {
-                    printf("Escreva a posição da jogada (1-3): ");
-                    scanf("%d %d", &l, &c );
-
+                    for  (j=0; j < TAM; j++)
                     {
 
+                        jogo[l-1][c-1] = 'X';
+                        printf("%c", jogo[i][j]);
+
+
                     }
+                    printf("\n");
+
                 }
-                printf("\n");
+            }
+            else
+            {
+
+                for (i=0; i < TAM; i++)
+                {
+                    for  (j=0; j < TAM; j++)
+                    {
+
+                        jogo[l-1][c-1] = 'O';
+                        printf("%c ", jogo[i][j]);
+
+                    }
+                    printf("\n");
+
+                }
 
             }
 
         }
 
     }
-
+    printf("O jogo acabou o vencedor é: %c ", winner)
 
 
 
 
     return 0;
-    }
+}
