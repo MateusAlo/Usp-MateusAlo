@@ -106,7 +106,7 @@ int main()
         }
 
     }
-    printf("O jogo acabou o vencedor é: %c ", winner)
+    printf("O jogo acabou o vencedor é: %c ", winner);
 
 
 
