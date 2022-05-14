@@ -8,6 +8,11 @@
 #define TAM 3
 
 
+
+
+
+
+
 int main()
 
 {
@@ -48,68 +53,103 @@ int main()
 
     }
     printf("\n");
+    for ()
     for (i=0; i < TAM; i++)
     {
-        for (j=0; j < TAM; j++)
-        {
-            jogo[i][j]= '-';
-            printf("%c", jogo[i][j]);
-
-        }
-        printf("\n");
+        printf("\n  %c | %c | %c\n", jogo[i][0], jogo[i][1], jogo[i][2]);
 
     }
+
     for (n = 0; n < 9; n++)
     {
         printf("\nEscreva a posicao da jogada (1-3): ");
         scanf("%d %d", &l, &c );
-        while (jogo[l-1][c-1] != '-'){
+        while (jogo[l-1][c-1] != ' ')
+        {
             printf("\nEscreva outra posicao (nao ocupada)");
             scanf("%d %d", &l, &c );
         }
-    {
 
-        if ((n%2 == 0) && (jogo[l-1][c-1] == '-'))
+
+            if ((n%2 == 0) && (jogo[l-1][c-1] == ' '))
             {
                 for (i=0; i < TAM; i++)
                 {
+                    printf("\n---|---|---\n");
                     for  (j=0; j < TAM; j++)
                     {
 
                         jogo[l-1][c-1] = 'X';
-                        printf("%c", jogo[i][j]);
+                        printf("  %c ", jogo[i][j]);
 
 
                     }
-                    printf("\n");
 
                 }
+                printf("\n");
             }
             else
             {
 
                 for (i=0; i < TAM; i++)
                 {
+                    printf("\n---|---|---\n");
                     for  (j=0; j < TAM; j++)
                     {
 
                         jogo[l-1][c-1] = 'O';
-                        printf("%c ", jogo[i][j]);
+                        printf("  %c  ", jogo[i][j]);
 
                     }
-                    printf("\n");
 
                 }
-
+                printf("\n");
             }
+
+
+        for (i=0; i < TAM; i++) //loop verifica linhas
+        {
+
+            if ((jogo[i][0] == jogo[i][1]) && (jogo[i][1] == jogo[i][2]) && (jogo[i][0] != ' '))
+            {
+                winner = jogo[i][0];
+                n = 9;
+                break;
+            }
+        }
+
+        for (j=0; j < TAM; j++)
+        {
+
+            if ((jogo[0][j] == jogo[1][j]) && (jogo[1][j] == jogo[2][j]) && (jogo[0][j] != ' '))
+            {
+                winner = jogo[0][j];
+                n = 9;
+                break;
+            }
+
+
+        }
+        if ((jogo[0][0] == jogo [1][1]) && (jogo[1][1] == jogo[2][2]) && (jogo[0][0] != ' '))
+        {
+            winner = jogo[0][0];
+            n = 9;
+        }
+        if ((jogo[0][2] == jogo [1][1]) && (jogo[1][1] == jogo[2][0]) && (jogo[0][2] != ' '))
+        {
+            winner = jogo[0][2];
+            n = 9;
+
+
+                printf("O jogo acabou o vencedor é: %c ", winner);
+
 
         }
 
     }
-    printf("O jogo acabou o vencedor é: %c ", winner);
-
 
 
 
     return 0;
 }
+
