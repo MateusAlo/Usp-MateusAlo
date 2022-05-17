@@ -1,0 +1,44 @@
+//Criado por Mateus Alonso (13695553) no dia 17/05/22
+//multiplicação de 3 valores
+
+#include <math.h>
+#include <stdio.h>
+
+
+
+int readValue(); //define a função
+int multiply(int a, int b, int c);
+int main()
+{
+    char ch = '0';
+    while (ch != 's')
+    {
+    int v1 = readValue(); //lê o primeiro
+    int v2 = readValue(); //lê o segundo
+    int v3 = readValue(); //lê o terceiro
+    int m = multiply(v1, v2, v3); //multiplica
+
+
+    printf("\nO produto eh: %d", m); //escreve o retorno de multiply
+    printf("\nAperte s para sair: ");
+    ch = getch();
+    }
+}
+
+
+int readValue()
+{
+    int v;
+    printf("\nEscreva um valor: "); //recebe um valor
+    scanf("%d", &v);
+    return (v);
+
+}
+
+int multiply(int a, int b, int c)
+{
+    int m;
+    m = a * b * c; // multiplica os 3 valores recebidos anteriormente
+    return (m);
+
+}
