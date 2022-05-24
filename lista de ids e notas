@@ -1,0 +1,73 @@
+//Mateus Alonso n°13695553
+//data 24/05/22
+//lista de notas de alunos com os respectivos ids
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include <locale.h>
+#include <time.h>
+
+
+typedef struct //definição e declaração dos campos
+ {
+    int id;
+    int nota;
+
+ }
+ registro;
+void printaluno( registro aluno)
+{
+   printf("\n\nInformações do aluno, id: %d:\n",aluno.id); //imprime os dados da struct
+   printf("Nota: %d\n",aluno.nota);
+
+}
+
+int main()
+{
+    srand(time(NULL));
+    setlocale(LC_ALL,"");
+
+ registro aluno[10]; //atribuição
+ aluno[0].id = rand()%999;
+ aluno[0].nota = rand()%11;
+
+ aluno[1].nota = rand()%11;
+ aluno[1].id = rand()%999;
+
+ aluno[2].nota = rand()%11;
+ aluno[2].id = rand()%999;
+
+ aluno[3].nota = rand()%11;
+ aluno[3].id = rand()%999;
+
+ aluno[4].nota = rand()%11;
+ aluno[4].id = rand()%999;
+
+ aluno[5].nota = rand()%11;
+ aluno[5].id = rand()%999;
+
+ aluno[6].nota = rand()%11;
+ aluno[6].id = rand()%999;
+
+ aluno[7].nota = rand()%11;
+ aluno[7].id = rand()%999;
+
+ aluno[8].nota = rand()%11;
+ aluno[8].id = rand()%999;
+
+ aluno[9].nota = rand()%11;
+ aluno[9].id = rand()%999;
+
+printaluno(aluno[0]); //executa printaluno
+printaluno(aluno[1]);
+printaluno(aluno[2]);
+printaluno(aluno[3]);
+printaluno(aluno[4]);
+printaluno(aluno[5]);
+printaluno(aluno[6]);
+printaluno(aluno[7]);
+printaluno(aluno[8]);
+printaluno(aluno[9]);
+
+return 0;
+}
