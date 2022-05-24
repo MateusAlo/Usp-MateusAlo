@@ -1,0 +1,63 @@
+//Mateus Alonso n°13695553
+//data 24/05/22
+
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include<locale.h>
+
+
+typedef struct //definição e declaração
+ {
+    char nome[30];
+    char snome[30];
+    int idade;
+    int ordem; //usado para saber qual o numero do cliente
+ }
+ registro;
+void printcliente(registro cliente)
+{
+   printf("\n\nInformações do cliente %d:\n",cliente.ordem); //imprime os dados da struct
+   printf("Nome: %s\n",cliente.nome);
+   printf("Sobrenome: %s\n",cliente.snome);
+   printf("Idade: %d\n",cliente.idade);
+
+}
+
+int main()
+{
+setlocale(LC_ALL,"");
+
+ registro cliente[4]; //atribuição
+ strcpy(cliente[0].nome,"João");
+ strcpy(cliente[0].snome,"Alves");
+ cliente[0].idade = 20;
+ cliente[0].ordem = 1;
+
+
+ strcpy(cliente[1].nome,"Cleiton");
+ strcpy(cliente[1].snome,"Terracota");
+ cliente[1].idade = 120;
+ cliente[1].ordem = 2;
+
+
+ strcpy(cliente[2].nome,"Sílvio");
+ strcpy(cliente[2].snome,"Santos");
+ cliente[2].idade = 99999;
+ cliente[2].ordem = 3;
+
+
+
+ strcpy(cliente[3].nome,"Lucas");
+ strcpy(cliente[3].snome,"Neto");
+ cliente[3].idade = 2;
+ cliente[3].ordem = 4;
+
+
+printcliente(cliente[0]); //executa printcliente
+printcliente(cliente[1]);
+printcliente(cliente[2]);
+printcliente(cliente[3]);
+
+return 0;
+}
