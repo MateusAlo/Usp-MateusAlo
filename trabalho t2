@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+#include <time.h>
+
+
+typedef struct
+{
+    char nome[30];
+    char snome[30];
+
+}t_info;
+
+
+int main()
+{
+   char name[30];
+   char surname[30];
+   char i = 0, ch;
+   while (i != 's')
+   {
+    printf("\nHello World");
+    printf("\nEscreva seu nome: ");
+    scanf("%s",name );
+    printf("Oi amigo %s",name );
+    printf("\nEscreva seu sobrenome: ");
+    scanf("%s",surname );
+    printf("\nBom te conhecer %s %s",name, surname);
+    printf("\nAperte s se quiser sair: ");
+    scanf("%c",&i);
+    getch();
+    scanf("%c",&i);
+
+   }
+    t_info amigo[10];
+    strcpy (amigo[0].nome,name);
+    strcpy (amigo[0].nome,surname);
+    printf("%s", amigo[0].nome);
+    printf("%s", amigo[0].snome);
+
+
+
+
+
+
+    return 0;
+}
+
