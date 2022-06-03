@@ -1,0 +1,31 @@
+//Mateus Alonso n°13695553
+//escreva um programa com 10 alunos em uma struct, usando o id e idade na sequencia atualize a struct com o id e idade a ser mudado
+
+#include <stdio.h>
+#include <time.h>
+#define TAM 10
+
+typedef struct
+{
+    int id;
+    int idade;
+
+} registro;
+
+int main()
+{
+    int i;
+    srand(time(NULL));
+    printf("Idade e id:\n ");
+    registro aluno[TAM];
+        for( i=1; i <= TAM;i++)
+        {
+            
+            aluno[i].idade = rand()%30;
+            printf("\n");
+            aluno[i].id = i;
+            printf("\n\n");
+
+        }
+    
+}
