@@ -1,0 +1,43 @@
+//Mateus Alonso 13695553 24/06/22
+//inversão de string usando strlen e duas funções
+
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+
+void string_inverter(int d, char*pt)
+{
+    int i;
+    char *stringi = (char*)malloc(sizeof(char)*d);
+    for (i=0; i <= d; i++)
+        {
+        stringi[i] = pt[(d-i-1)];
+        }
+
+    stringi[d] = '\0';
+
+printf("o contrario de %s eh %s",pt, stringi);
+
+}
+
+int main()
+{
+
+
+char *string_dinamica;
+string_dinamica = (char*)malloc(sizeof(char)*40);
+int d, i;
+//int *pt;
+printf("Digite a palavra a ser invertida: \n\n");
+scanf("%40[^\n]s",string_dinamica);
+d = strlen(string_dinamica);
+realloc(string_dinamica,sizeof(char)*d+1);
+//pt = &string_dinamica;
+string_inverter(d, string_dinamica);
+
+
+return 0;
+}
